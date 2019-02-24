@@ -33,7 +33,7 @@ public class controlMe : NetworkBehaviour
     {
         //GetComponent<MeshRenderer>().material.color = Color.red;
         Camera.main.transform.parent = this.transform;
-        Camera.main.transform.position = new Vector3(0f, 5, -15f);
+        Camera.main.transform.localPosition = new Vector3(0f, 5, -15f);
     }
 
     [Command]
