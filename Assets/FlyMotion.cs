@@ -59,6 +59,11 @@ public class FlyMotion : MonoBehaviour
             transform.Rotate(2f*Input.GetAxis("Vertical"), 0.0f, -2f*Input.GetAxis("Horizontal"));
         }
 
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            GetComponent<Combat>().RpcRespawn();
+        }
+
 
     }
 }

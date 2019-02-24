@@ -10,9 +10,14 @@ public class Combat : NetworkBehaviour
 
     [SyncVar]
     public int health = maxHealth;
+    private GameObject blow;
 
+    public override void OnStartLocalPlayer()
+    {
+        blow = GameObject.Find("Explosion");
+    }
 
-    public void TakeDamage(int amount)
+        public void TakeDamage(int amount)
     {
         if (!isServer)
             return;
@@ -20,6 +25,7 @@ public class Combat : NetworkBehaviour
         health -= amount;
         if (health <= 0)
         {
+            blow = GameObject.Find("Explosion");
             health = maxHealth;
 
             // called on the server, will be invoked on the clients
@@ -28,7 +34,7 @@ public class Combat : NetworkBehaviour
     }
 
     [ClientRpc]
-    void RpcRespawn()
+    public void RpcRespawn()
     {
         if (isLocalPlayer)
         {

@@ -23,7 +23,7 @@ public class shoot : MonoBehaviour
         if (hitPlayer != null)
         {
             var combat = hit.GetComponent<Combat>();
-            combat.TakeDamage(10);
+            combat.TakeDamage(25);
 
             Destroy(gameObject);
         }
