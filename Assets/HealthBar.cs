@@ -23,12 +23,12 @@ public class HealthBar : MonoBehaviour
         // draw health bar background
         GUI.color = Color.grey;
         GUI.backgroundColor = Color.grey;
-        GUI.Box(new Rect(pos.x - 26, Screen.height - pos.y + 20, Combat.maxHealth / 2, 7), ".", backStyle);
+        GUI.Box(new Rect(pos.x - 51, Screen.height - pos.y + 20, Combat.maxHealth, 7), ".", backStyle);
 
         // draw health bar amount
         GUI.color = Color.green;
         GUI.backgroundColor = Color.green;
-        GUI.Box(new Rect(pos.x - 25, Screen.height - pos.y + 21, combat.health / 2, 5), ".", healthStyle);
+        GUI.Box(new Rect(pos.x - 50, Screen.height - pos.y + 21, combat.health, 5), ".", healthStyle);
     }
 
     void InitStyles()
