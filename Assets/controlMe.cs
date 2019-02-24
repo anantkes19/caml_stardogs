@@ -40,14 +40,14 @@ public class controlMe : NetworkBehaviour
     void CmdFire()
     {
         // create the bullet object from the bullet prefab
-        var bullet = (GameObject)Instantiate( bulletPrefab, transform.position + transform.forward * 6f, Quaternion.identity);
+        var bullet = (GameObject)Instantiate( bulletPrefab, transform.position + transform.forward * 6f, transform.rotation);
 
         // make the bullet move away in front of the player
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * 15;
+        bullet.GetComponent<Rigidbody>().velocity = transform.forward * 50;
 
         NetworkServer.Spawn(bullet);
 
         // make bullet disappear after 2 seconds
-        Destroy(bullet, 4.0f);
+        Destroy(bullet, 5.0f);
     }
 }
